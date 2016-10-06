@@ -1,12 +1,16 @@
+# Java specific files
 *.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.ear
+/target
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Logs in general
+*.log
 hs_err_pid*
+
+# Eclipse specific files
+.classpath
+.project
+.pydevproject
+.settings/
