@@ -5,7 +5,6 @@
 	<groupId>lightspeedpos</groupId>
 	<artifactId>test_jython</artifactId>
 	<version>1.0.0</version>
-	<packaging>jar</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,8 +16,21 @@
 			<artifactId>jython-standalone</artifactId>
 			<version>2.7.0</version>
 		</dependency>
+		<!-- Those are just to remove the SLF4J logger issue -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.6.4</version>
+		</dependency>
 	</dependencies>
-
+	<!-- keeping this so if we want to import python libs to the project in the future -->
+	<!-- <repositories> <repository> <id>project</id> <url>file://${basedir}/lib</url> 
+		</repository> </repositories> -->
 	<build>
 		<resources>
 			<resource>
@@ -26,6 +38,19 @@
 			</resource>
 		</resources>
 		<plugins>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>auto-clean</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

@@ -1,7 +1,4 @@
-README
-======
-
-How to build a [Jython] project with [Maven]:
+=How to build a [Jython] project with [Maven]:=
 
  1. Using [Eclipse], create a *Maven project*
  2. Create a source folder for the [Python] code (`src/main/python`)
@@ -12,6 +9,15 @@ How to build a [Jython] project with [Maven]:
  7. To compile your project do: `mvn build`
  8. To run python files do: `java -jar test_jython-<version>.jar classes/main.py`
 
+
+=Workaround for PyDev's issue of not detecting the dependencies imported via Maven=
+
+ 1. `git clone git@github.com:kbrowder/PyJDT.git`
+ 2. Copy the two **net.\*** directories to the Eclipse dropins folder (Eclipse.app/Contents/Eclipse/dropins)
+ 3. Restart Eclipse
+ 4. Try to import the class that was not importing before
+
+
 Enjoy! :)
 
 [Eclipse]: http://www.eclipse.org/
@@ -19,3 +25,4 @@ Enjoy! :)
 [Maven]: https://maven.apache.org/
 [PyDev]: http://www.pydev.org/
 [Python]: http://www.python.org/
+

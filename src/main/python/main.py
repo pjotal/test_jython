@@ -1,5 +1,5 @@
+# here is where everything starts
 import Person
 
 
-if __name__ == '__main__':
-    print(Person('pedro', '06/06'))
+print(Person('pedro', '06/06'))
